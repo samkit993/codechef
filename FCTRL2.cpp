@@ -13,8 +13,7 @@ void multiplication(int* arr,int n, int& m){
     }
 
     while(temp > 0 ){
-        int temp2 = temp;
-        arr[m] = temp2%10;
+        arr[m] = temp%10;
         temp = temp/10;
         //cout << m << " " << arr[m] << endl;
         ++m;
