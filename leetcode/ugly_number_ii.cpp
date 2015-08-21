@@ -8,24 +8,25 @@
 
 using namespace std;
 int nthUglyNumber(int n) {
-	set<int> uglies;
-	
-	vector<int> primes;
-	primes.push_back(2);
-	primes.push_back(3);
-	primes.push_back(5);
-
-	for(int i=0;i<primes.size();++i){
-		int temp = primes[i];
-		while(temp < n){
-			uglies.insert(temp);
-			temp += primes[i];
-		}
+	if(n < 1)
+		return 0;
+	vector<int> uglies;
+	uglies.push_back(1);
+	int idx2 = 0, idx3 = 0, idx5 = 0;
+	for(int i=0;i<n;++i){
+		int temp2 = uglies[idx2] * 2, temp3 = uglies[idx3] * 3, temp5 = uglies[idx5] * 5,min = 1000000009  ;
+		min = ( temp2 > temp3 ) ? temp3 : temp2;
+		min = ( min > temp5 ) ? temp5 : min;
+		uglies.push_back(min);
+		idx2 += (min == temp2);
+		idx3 += (min == temp3);
+		idx5 += (min == temp5);
 	}
+	return uglies[n-1];	
 }
 
 int main(){
-	cout << nthUglyNumber(100) << endl;
+	cout << nthUglyNumber(11) << endl;
 	return 0;
 }
 
