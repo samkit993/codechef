@@ -3,10 +3,12 @@
 #include<cstdio>
 #include<string>
 #include<vector>
-#include<stack>
-#include<queue>
-#include<map>
 using namespace std;
+int countNodes(TreeNode* root) {
+	if(root == NULL)
+		return 0;
+	return 1 + countNodes(root->left) + countNodes(root->right);
+}
 int main(){
 	return 0;
 }

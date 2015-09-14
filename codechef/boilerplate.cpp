@@ -3,10 +3,13 @@
 #include<cstdio>
 #include<string>
 #include<vector>
-#include<stack>
-#include<queue>
-#include<map>
 using namespace std;
+
 int main(){
+	int tCases;
+	scanf("%d", &tCases);
+	for(int t=0;t<tCases;++t){
+
+	}
 	return 0;
 }

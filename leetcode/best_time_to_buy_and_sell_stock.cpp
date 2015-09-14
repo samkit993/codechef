@@ -3,10 +3,10 @@
 #include<cstdio>
 #include<string>
 #include<vector>
-#include<stack>
-#include<queue>
-#include<map>
 using namespace std;
+int maxProfit(vector<int>& prices) {
+	return *max_element(prices.begin(), prices.end()) - *max_element(prices.begin(), prices.end())
+}
 int main(){
 	return 0;
 }
